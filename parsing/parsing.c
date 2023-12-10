@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 10:38:17 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/07 11:26:01 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/10 13:46:36 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ int isvalidnbr(char *str)
 		return (0);
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
+	if (*str == '+' || *str == '-')
+		str++;
 	if (!(*str >= '0' && *str <= '9'))
 		return (0);
+	str++;
 	while (*str >= '0' && *str <= '9')
 		str++;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
@@ -51,13 +54,15 @@ char *validpile(int ac, char **av)
 		if (isvalidstrpile(av[1]) == 0)
 			return ("Pile a is invalid");
 	}
-	while (ac > 0)
+	else
 	{
-		if (isvalidnbr(av[ac]) == 0)
-			return ("One or more number is invalid");
-		ac--;
+		while (ac - 1 > 0)
+		{
+			if (isvalidnbr(av[ac - 1]) == 0)
+				return ("One or more number is invalid");
+			ac--;
+		}
 	}
-	
 	return ("ok");
 }
 

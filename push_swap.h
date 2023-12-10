@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/04 13:54:50 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/10 12:08:30 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <aio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+// STRUCTURES
+
+typedef struct	s_pile
+{
+	int	*tab;
+	int	*len;
+}				t_pile;
 
 // UTILS
 char	*ft_calloc(size_t size);
