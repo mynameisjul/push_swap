@@ -6,13 +6,13 @@
 #    By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 15:37:29 by jblaye            #+#    #+#              #
-#    Updated: 2023/12/05 16:53:26 by jblaye           ###   ########.fr        #
+#    Updated: 2023/12/11 15:14:12 by jblaye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
-SRCS = push.c push_swap_utils.c rotate.c  swap.c main.c
+SRCS = push.c rotate.c swap.c main.c
 
 HEADERS = ./push_swap.h
 
@@ -25,13 +25,16 @@ RM = rm -f
 .c.o:
 			$(CC) $(CFLAGS) $(HEADERS) -c $< -o $(<:.c=.o)
 
-all:		libft $(NAME)
+all:		libft printf $(NAME)
 
 $(NAME):	$(OBJS)
 			$(CC) $(CFLAGS) $(HEADERS) $(SRCS)
 
 libft:		
 			make -C ./libft
+
+printf:		
+			make -C ./printf
 
 clean:
 			rm -f $(OBJS)

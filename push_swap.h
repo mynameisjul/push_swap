@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/11 12:42:12 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:05:59 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,23 @@
 # include <aio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "libft/libft.h"
 
 // STRUCTURES
 
 typedef struct	s_pile
 {
-	int	*tab;
-	int	len;
+	int		*tab;
+	size_t	len;
 }				t_pile;
 
-// UTILS
-char	*ft_calloc(size_t size);
-char	*ft_realloc(char *str, size_t size);
-ssize_t	ft_strlen(char *str);
-
 // PARSING FUNCTIONS
-int isvalidstrpile(char *str);
-int isvalidnbr(char *str);
-int validtabpile(int ac, char **av);
+size_t	isvalidstrpile(char *str);
+int		isvalidnbr(char *str);
+size_t	isvalidtabpile(int ac, char **av);
+int		*strtointtab(char *str, size_t len);
+int		*strtabtointtab(char **av, size_t len);
+t_pile	parsing(int ac, char **av);
 
 // PUSH_SWAP FUNCTIONS
 void	swap(int **p);

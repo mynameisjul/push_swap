@@ -6,19 +6,19 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 10:38:17 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/11 12:52:28 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:09:58 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_pile isvalidstrpile(char *str)
+size_t	isvalidstrpile(char *str)
 {
-	t_pile	inttab;
+	size_t	len;
 	
-	inttab.len = 0;
+	len = 0;
 	if (!str)
-		return (inttab);
+		return (len);
 	while (*str != 0)
 	{
 		while ((*str >= 9 && *str <= 13) || *str == 32)
@@ -27,21 +27,21 @@ t_pile isvalidstrpile(char *str)
 			str++;
 		if (!(*str >= '0' && *str <= '9'))
 		{
-			inttab.len = 0;
-			return (inttab);
+			len = 0;
+			return (len);
 		}
-		inttab.len++;
+		len++;
 		while (*str >= '0' && *str <= '9')
 			str++;
 		while ((*str >= 9 && *str <= 13) || *str == 32)
 			str++;
 	}
 	if (*str != 0)
-		inttab.len = 0;
-	return (inttab);
+		len = 0;
+	return (len);
 }
 
-int isvalidnbr(char *str)
+int	isvalidnbr(char *str)
 {
 	if (!str)
 		return (0);
@@ -60,15 +60,21 @@ int isvalidnbr(char *str)
 	return (1);
 }
 
-int validtabpile(int ac, char **av)
+size_t	isvalidtabpile(int ac, char **av)
 {
+	size_t	len;
+	
+	len = ac - 1;
 	while (ac - 1 > 0)
 	{
 		if (isvalidnbr(av[ac - 1]) == 0)
-			return (0);
+		{
+			len = 0;
+			return (len);
+		}
 		ac--;
 	}
-	return (1);
+	return (len);
 }
 
 
