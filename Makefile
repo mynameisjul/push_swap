@@ -6,7 +6,7 @@
 #    By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 15:37:29 by jblaye            #+#    #+#              #
-#    Updated: 2023/12/11 15:14:12 by jblaye           ###   ########.fr        #
+#    Updated: 2023/12/11 16:47:40 by jblaye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,10 +39,12 @@ printf:
 clean:
 			rm -f $(OBJS)
 			make -C ./libft clean
+			make -C ./printf clean
 
 fclean:		clean
 			rm -f $(NAME)
 			make -C ./libft fclean
+			make -C ./printf fclean
 
 re:			fclean all
 

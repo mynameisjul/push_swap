@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/11 15:05:59 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/11 16:52:53 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ size_t	isvalidtabpile(int ac, char **av);
 int		*strtointtab(char *str, size_t len);
 int		*strtabtointtab(char **av, size_t len);
 t_pile	parsing(int ac, char **av);
+int		duplicatenbrcheck(t_pile pile);
 
 // PUSH_SWAP FUNCTIONS
 void	swap(int **p);

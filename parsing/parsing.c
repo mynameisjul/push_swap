@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:24:44 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/11 15:12:04 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/11 17:01:22 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,42 +52,72 @@ int	*strtabtointtab(char **av, size_t len)
 
 t_pile	parsing(int ac, char **av)
 {
-	t_pile	inttab;
+	t_pile	pile;
 
-	inttab.len = 0;
+	pile.len = 0;
 	if (ac == 1)
-		return (inttab);
+		return (pile);
 	else if (ac == 2)
 	{
-		inttab.len = isvalidstrpile(av[1]);
-		if (inttab.len == 0)
-			return (inttab);
-		inttab.tab = strtointtab(av[1], inttab.len);
+		pile.len = isvalidstrpile(av[1]);
+		if (pile.len == 0)
+			return (pile);
+		pile.tab = strtointtab(av[1], pile.len);
 	}
 	else
 	{
-		inttab.len = isvalidtabpile(ac, av);
-		if (inttab.len == 0)
-			return (inttab);
-		inttab.tab = strtabtointtab(&av[1], inttab.len);
+		pile.len = isvalidtabpile(ac, av);
+		if (pile.len == 0)
+			return (pile);
+		pile.tab = strtabtointtab(&av[1], pile.len);
 	}
-	return (inttab);
+	return (pile);
+}
+
+int	duplicatenbrcheck(t_pile pile)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 1;
+	if (pile.len > 0)
+	{
+		while (i < pile.len - 1)
+		{
+			while (j < pile.len)
+			{
+				if (pile.tab[i] == pile.tab[j])
+					return (0);
+				j++;
+			}
+			i++;
+			j = i + 1;
+		}
+		return (1);
+	}
+	return (0);
 }
 
 // #include <stdio.h>
 
 // int main(int ac, char **av)
 // {
-// 	t_pile inttab;
+// 	t_pile pile;
 // 	size_t i = 0;
 
-// 	inttab = parsing(ac, av);
-// 	if (inttab.len == 0)
-// 		printf("Invalid arguments\n");
-// 	while (i < inttab.len)
+// 	pile = parsing(ac, av);
+// 	if (pile.len == 0)
+// 		printf("Invalid argument(s)\n");
+// 	else
 // 	{
-// 		printf("%d\n", inttab.tab[i]);
-// 		i++;
+// 		if (duplicatenbrcheck(pile) == 0)
+// 			printf("One or more numbers are duplicated\n");
+// 		while (i < pile.len)
+// 		{
+// 			printf("%d\n", pile.tab[i]);
+// 			i++;
+// 		}
 // 	}
 // 	return (0);
 // }
