@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/10 12:08:30 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/11 12:42:12 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef struct	s_pile
 {
 	int	*tab;
-	int	*len;
+	int	len;
 }				t_pile;
 
 // UTILS
@@ -30,6 +30,10 @@ char	*ft_calloc(size_t size);
 char	*ft_realloc(char *str, size_t size);
 ssize_t	ft_strlen(char *str);
 
+// PARSING FUNCTIONS
+int isvalidstrpile(char *str);
+int isvalidnbr(char *str);
+int validtabpile(int ac, char **av);
 
 // PUSH_SWAP FUNCTIONS
 void	swap(int **p);
