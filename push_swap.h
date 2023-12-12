@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/11 16:52:53 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/12 16:51:35 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <aio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 # include "libft/libft.h"
 
 // STRUCTURES
@@ -34,9 +35,12 @@ int		*strtointtab(char *str, size_t len);
 int		*strtabtointtab(char **av, size_t len);
 t_pile	parsing(int ac, char **av);
 int		duplicatenbrcheck(t_pile pile);
+t_list	*tabtolist(t_pile tabpile);
 
 // PUSH_SWAP FUNCTIONS
-void	swap(int **p);
-void	push(int **p1, int **p2);
+void	swap(t_pile *p);
+// void	push(t_pile *src, t_pile *dst);
+void	rotate(t_pile *p);
+void	rrotate(t_pile *p);
 
 #endif

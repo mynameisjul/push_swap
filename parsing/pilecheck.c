@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 10:38:17 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/11 15:09:58 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:04:32 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	isvalidstrpile(char *str)
 {
 	size_t	len;
-	
+
 	len = 0;
 	if (!str)
 		return (len);
@@ -63,7 +63,7 @@ int	isvalidnbr(char *str)
 size_t	isvalidtabpile(int ac, char **av)
 {
 	size_t	len;
-	
+
 	len = ac - 1;
 	while (ac - 1 > 0)
 	{
@@ -76,8 +76,6 @@ size_t	isvalidtabpile(int ac, char **av)
 	}
 	return (len);
 }
-
-
 
 // int main(int ac, char **av)
 // {

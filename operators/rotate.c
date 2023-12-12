@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 11:13:07 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/04 14:41:49 by jblaye           ###   ########.fr       */
+/*   Created: 2023/12/12 16:24:25 by jblaye            #+#    #+#             */
+/*   Updated: 2023/12/12 16:41:55 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void push(int **src, int **dst)
+void rotate(t_pile *p)
 {
-	if (*src)
-	{
-		if (*dst)
-			*dst = ft_rrealloc(1);
-		if (!*dst)
-			return (0);
-		*dst[-1] = *src[0];
-		rrotate(dst);
-	}
+	int		tmp;
+	size_t	i;
 
+	i = 1;
+	tmp = p->tab[0];
+	while (i < p->len)
+	{
+		p->tab[i - 1] = p->tab[i];
+		i++;
+	}
+	p->tab[i - 1] = tmp;
 }

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 11:16:54 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/02 11:17:07 by julieblaye       ###   ########.fr       */
+/*   Created: 2023/12/02 11:13:07 by julieblaye        #+#    #+#             */
+/*   Updated: 2023/12/12 17:01:36 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	swap(int **p)
+void push(t_pile *src, t_pile *dst)
 {
 	int	tmp;
 
-	tmp = *p[0];
-	*p[0] = *p[1];
-	*p[1] = tmp;
+	tmp = src->tab[0];
+	rotate(src);
+	src->len--;
+	dst->tab[dst->len] = tmp;
+	dst->len++;
+	rrotate(dst);  	
 }
