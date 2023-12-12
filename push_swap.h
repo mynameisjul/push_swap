@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/12 17:22:19 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/12 17:42:26 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "libft/libft.h"
+# include "printf/ft_printf.h"
 
 // STRUCTURES
 
@@ -35,12 +36,14 @@ int		*strtointtab(char *str, size_t len);
 int		*strtabtointtab(char **av, size_t len);
 t_pile	parsing(int ac, char **av);
 int		duplicatenbrcheck(t_pile pile);
-t_list	*tabtolist(t_pile tabpile);
 
 // PUSH_SWAP FUNCTIONS
 void	swap(t_pile *p);
-// void	push(t_pile *src, t_pile *dst);
+void	push(t_pile *src, t_pile *dst);
 void	rotate(t_pile *p);
 void	rrotate(t_pile *p);
+
+// SORTING ALGORITHM
+int 	issorted(t_pile *p);
 
 #endif

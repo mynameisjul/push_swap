@@ -6,14 +6,16 @@
 #    By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 15:37:29 by jblaye            #+#    #+#              #
-#    Updated: 2023/12/12 17:05:56 by jblaye           ###   ########.fr        #
+#    Updated: 2023/12/12 17:55:54 by jblaye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
-SRCS = /operators/push.c /operators/rotate.c /operators/swap.c \
-		/operators/rrotate.c /parsing/parsing.c /parsing/pilecheck.c \
+SRCS = ./operators/push.c ./operators/rotate.c \
+		./operators/swap.c ./operators/rrotate.c \
+		./parsing/parsing.c ./parsing/pilecheck.c \
+		./sorting/issorted.c \
 		main.c
 
 HEADERS = ./push_swap.h
@@ -29,14 +31,14 @@ RM = rm -f
 
 all:		libft printf $(NAME)
 
-$(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(HEADERS) $(SRCS)
-
 libft:		
 			make -C ./libft
 
 printf:		
 			make -C ./printf
+
+$(NAME):	$(OBJS)
+			$(CC) $(CFLAGS) $(HEADERS) $(SRCS) ./libft/libft.a ./printf/printf.a
 
 clean:
 			rm -f $(OBJS)
@@ -50,4 +52,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re libft printf
