@@ -6,13 +6,15 @@
 #    By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 15:37:29 by jblaye            #+#    #+#              #
-#    Updated: 2023/12/11 16:47:40 by jblaye           ###   ########.fr        #
+#    Updated: 2023/12/12 17:05:56 by jblaye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 
-SRCS = push.c rotate.c swap.c main.c
+SRCS = /operators/push.c /operators/rotate.c /operators/swap.c \
+		/operators/rrotate.c /parsing/parsing.c /parsing/pilecheck.c \
+		main.c
 
 HEADERS = ./push_swap.h
 

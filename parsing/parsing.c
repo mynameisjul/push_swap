@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:24:44 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/12 16:50:40 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/12 17:25:47 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,33 +114,33 @@ int	duplicatenbrcheck(t_pile pile)
 	return (0);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(int ac, char **av)
-{
-	t_pile	pile;
-	size_t	i = 0;
-	
-	pile = parsing(ac, av);
-	if (pile.len == 0)
-		printf("Invalid argument(s)\n");
-	else
-	{
-		if (duplicatenbrcheck(pile) == 0)
-			return (printf("One or more numbers are duplicated\n"), 0);
-		while (i < pile.len)
-		{
-			printf("%d\n", pile.tab[i]);
-			i++;
-		}
-		rrotate(&pile);
-		printf("rotate\n");
-		i = 0;
-		while (i < pile.len)
-		{
-			printf("%d\n", pile.tab[i]);
-			i++;
-		}
-	}
-	return (0);
-}
+// int	main(int ac, char **av)
+// {
+// 	t_pile	pile;
+// 	size_t	i = 0;
+//
+// 	pile = parsing(ac, av);
+// 	if (pile.len == 0)
+// 		printf("Invalid argument(s)\n");
+// 	else
+// 	{
+// 		if (duplicatenbrcheck(pile) == 0)
+// 			return (printf("One or more numbers are duplicated\n"), 0);
+// 		while (i < pile.len)
+// 		{
+// 			printf("%d\n", pile.tab[i]);
+// 			i++;
+// 		}
+// 		rrotate(&pile);
+// 		printf("rotate\n");
+// 		i = 0;
+// 		while (i < pile.len)
+// 		{
+// 			printf("%d\n", pile.tab[i]);
+// 			i++;
+// 		}
+// 	}
+// 	return (0);
+// }

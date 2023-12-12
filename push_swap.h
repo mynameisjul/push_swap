@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/12 16:51:35 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/12 17:22:19 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 // STRUCTURES
 
-typedef struct	s_pile
+typedef struct s_pile
 {
 	int		*tab;
 	size_t	len;

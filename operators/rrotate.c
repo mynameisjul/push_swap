@@ -6,13 +6,13 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 16:42:31 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/12 16:50:29 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/12 17:25:03 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void rrotate(t_pile *p)
+void	rrotate(t_pile *p)
 {
 	int		tmp;
 	size_t	i;
