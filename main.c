@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:10:51 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/12 17:57:42 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/13 16:32:11 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,39 @@
 
 int	main(int ac, char **av)
 {
-	t_pile	pile;
+	t_pile	pa;
+	t_pile	pb;
 	size_t	i = 0;
 
-	pile = parsing(ac, av);
-	if (pile.len == 0)
+	pa = parsing(ac, av);
+	printf("palen %zu\n", pa.len);
+	pb.len = 0;
+	pb.tab = (int *) ft_calloc(pa.len, sizeof(int));
+	if (pa.len == 0)
 		printf("Invalid argument(s)\n");
 	else
 	{
-		if (duplicatenbrcheck(pile) == 0)
+		if (duplicatenbrcheck(pa) == 0)
 			return (printf("One or more numbers are duplicated\n"), 0);
-		while (i < pile.len)
+		if(issorted(&pa) == 1)
+			return (printf("\n"), 0);
+		printf("medianvalue %d\n", medianvalue(pa));
+	}
+	mediansort(&pa, &pb, medianvalue(pa));
+	i = 0;
+	printf("palen %zu\n", pa.len);
+	while (i < pa.len)
 		{
-			printf("%d\n", pile.tab[i]);
+			printf("%d ", pa.tab[i]);
 			i++;
 		}
-		if(issorted(&pile) == 1)
-			return (printf("The list is sorted\n"), 0);
-	}
-	return (printf("The list isn't sorted\n"), 0);
+	printf("\n");
+	i = 0;
+	printf("pblen %zu\n", pb.len);
+	while (i < pb.len)
+		{
+			printf("%d ", pb.tab[i]);
+			i++;
+		}
+	return (free(pa.tab), free(pb.tab), 0);
 }

@@ -6,7 +6,7 @@
 #    By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 15:37:29 by jblaye            #+#    #+#              #
-#    Updated: 2023/12/12 17:55:54 by jblaye           ###   ########.fr        #
+#    Updated: 2023/12/13 15:28:48 by jblaye           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,10 @@ NAME	= push_swap
 SRCS = ./operators/push.c ./operators/rotate.c \
 		./operators/swap.c ./operators/rrotate.c \
 		./parsing/parsing.c ./parsing/pilecheck.c \
-		./sorting/issorted.c \
+		./sorting/issorted.c ./sorting/threesome.c \
+		./sorting/mediansort.c \
+		./utils/multtab.c ./utils/imaxvalue.c \
+		./utils/medianvalue.c \
 		main.c
 
 HEADERS = ./push_swap.h
@@ -23,7 +26,7 @@ HEADERS = ./push_swap.h
 OBJS	= $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS	= -Wall -Wextra -Werror -I
+CFLAGS	= -Wall -Wextra -Werror -g3 -I
 RM = rm -f
 
 .c.o:

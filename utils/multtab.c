@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   issorted.c                                         :+:      :+:    :+:   */
+/*   multtab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/12 17:28:01 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/13 13:09:58 by jblaye           ###   ########.fr       */
+/*   Created: 2023/12/13 11:33:57 by jblaye            #+#    #+#             */
+/*   Updated: 2023/12/13 11:40:22 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	issorted(t_pile *p)
+void	multtab(t_pile *p, int fac)
 {
 	size_t	i;
 
-	i = 1;
-	while (i < p->len && p->tab[i] > p->tab[i - 1])
+	i = 0;
+	while (i < p->len)
+	{
+		p->tab[i] = fac * p->tab[i];
 		i++;
-	if (i == p->len)
-		return (1);
-	return (0);
+	}
 }

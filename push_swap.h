@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/12 17:42:26 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/13 15:24:02 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ typedef struct s_pile
 	size_t	len;
 }				t_pile;
 
+// UTILS
+void	multtab(t_pile *p, int fac);
+int		imaxvalue(t_pile p);
+int		medianvalue(t_pile p);
+
 // PARSING FUNCTIONS
 size_t	isvalidstrpile(char *str);
 int		isvalidnbr(char *str);
@@ -44,6 +49,8 @@ void	rotate(t_pile *p);
 void	rrotate(t_pile *p);
 
 // SORTING ALGORITHM
-int 	issorted(t_pile *p);
+int		issorted(t_pile *p);
+void	threesome(t_pile *p);
+void	mediansort(t_pile *pa, t_pile *pb, int median);
 
 #endif
