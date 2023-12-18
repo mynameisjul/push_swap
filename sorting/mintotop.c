@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mediansort.c                                       :+:      :+:    :+:   */
+/*   mintotop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 15:07:21 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/18 11:56:37 by jblaye           ###   ########.fr       */
+/*   Created: 2023/12/18 10:18:47 by jblaye            #+#    #+#             */
+/*   Updated: 2023/12/18 10:27:26 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	mediansort(t_pile *pa, t_pile *pb, int median)
+void	mintotop(t_pile *pa)
 {
-	size_t	totlen;
-
-	totlen = pa->len;
-	while (pa->len > 3)
+	int	i;
+	int	inf;
+	
+	i = 0;
+	inf = minlist(pa);
+	if (inf < (int) pa->len / 2)
 	{
-		push(pa, pb);
-		ft_printf("pb\n");
-		if (pb->tab[0] >= median && pb->len > 1)
+		while (inf != 0)
 		{
-			rotate(pb);
-			ft_printf("rb\n");
+			rotate(pa);
+			ft_printf("ra\n");
+			inf--;
+		}
+	}
+	else
+	{
+		while (inf != (int) pa->len)
+		{
+			rrotate(pa);
+			ft_printf("rra\n");
+			inf++;
 		}
 	}
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mediansort.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 15:07:21 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/18 11:56:37 by jblaye           ###   ########.fr       */
+/*   Created: 2023/12/18 11:25:08 by jblaye            #+#    #+#             */
+/*   Updated: 2023/12/18 11:33:55 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	mediansort(t_pile *pa, t_pile *pb, int median)
+void checker(ac, av)
 {
-	size_t	totlen;
+	t_pile	pa;
+	char	*cmd;
 
-	totlen = pa->len;
-	while (pa->len > 3)
+	pa = parsing(ac, av);
+	
+	while ()
+	if (pa.len == 0)
+
+	else
 	{
-		push(pa, pb);
-		ft_printf("pb\n");
-		if (pb->tab[0] >= median && pb->len > 1)
-		{
-			rotate(pb);
-			ft_printf("rb\n");
-		}
+		if (duplicatenbrcheck(pa) == 0)
+			return (ft_printf("Error\n"), 0);
+		if(issorted(&pa, 1) == 1)
+			return (ft_printf("\n"), 0);
 	}
 }

@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mediansort.c                                       :+:      :+:    :+:   */
+/*   twosome.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 15:07:21 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/18 11:56:37 by jblaye           ###   ########.fr       */
+/*   Created: 2023/12/18 10:36:48 by jblaye            #+#    #+#             */
+/*   Updated: 2023/12/18 10:38:01 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	mediansort(t_pile *pa, t_pile *pb, int median)
+void	twosome(t_pile *p)
 {
-	size_t	totlen;
-
-	totlen = pa->len;
-	while (pa->len > 3)
+	if (issorted(p, 1) == 0)
 	{
-		push(pa, pb);
-		ft_printf("pb\n");
-		if (pb->tab[0] >= median && pb->len > 1)
-		{
-			rotate(pb);
-			ft_printf("rb\n");
-		}
+		swap(p);
+		ft_printf("sa\n");
 	}
 }

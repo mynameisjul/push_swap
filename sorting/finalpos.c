@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   finalpos.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 12:03:16 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/17 21:20:18 by julieblaye       ###   ########.fr       */
+/*   Updated: 2023/12/18 10:16:27 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,26 @@
 
 int	finalpos(t_pile p, int n)
 {
-	int	sup;
-	int	inf;
 	int	i;
-
-	inf = -1;
-	sup = -1;
-	i = 0;
-	if (p.tab[0] < p.tab[p.len - 1] && n > p.tab[p.len - 1])
-		return (0);
+	int	pos;
+	
+	i = 1;
+	pos = 0;
 	while (i < (int) p.len)
 	{
-		
+		if (p.tab[i] > p.tab[pos])
+			pos = i;
+		i++;
 	}
-	return (j);
+	if (n > p.tab[pos])
+		return ((pos + 1) % (int) p.len);
+	i = 1;
+	pos = 0;
+	while (i < (int) p.len)
+	{
+		if (p.tab[i] > n && p.tab[i - 1] < n)
+			pos = i;
+		i++;
+	}
+	return (pos);
 }

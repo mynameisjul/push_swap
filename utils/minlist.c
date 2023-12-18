@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mediansort.c                                       :+:      :+:    :+:   */
+/*   minlist.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 15:07:21 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/18 11:56:37 by jblaye           ###   ########.fr       */
+/*   Created: 2023/12/18 10:27:35 by jblaye            #+#    #+#             */
+/*   Updated: 2023/12/18 10:27:59 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	mediansort(t_pile *pa, t_pile *pb, int median)
+int	minlist(t_pile *pa)
 {
-	size_t	totlen;
+	int	i;
+	int inf;
 
-	totlen = pa->len;
-	while (pa->len > 3)
+	i = 0;
+	inf = 0;
+	while (i < (int) pa->len)
 	{
-		push(pa, pb);
-		ft_printf("pb\n");
-		if (pb->tab[0] >= median && pb->len > 1)
-		{
-			rotate(pb);
-			ft_printf("rb\n");
-		}
+		if (pa->tab[i] < pa->tab[inf])
+			inf = i;
+		i++;
 	}
+	return (inf);
 }

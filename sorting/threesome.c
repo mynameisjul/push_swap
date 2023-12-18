@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   threesome.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:58:17 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/15 16:47:28 by julieblaye       ###   ########.fr       */
+/*   Updated: 2023/12/18 10:36:34 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	threesome(t_pile *p, int rev)
 	int	imax;
 
 	imax = imaxvalue(*p);
+	if (p->len == 2)
+		return (twosome(p));
 	if (issorted(p, rev) == 0)
 	{
 		if (imax == 0)

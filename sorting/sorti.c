@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorti.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:30:46 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/17 19:11:48 by julieblaye       ###   ########.fr       */
+/*   Updated: 2023/12/18 10:40:59 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,27 +99,14 @@ void	sorti(t_pile *pa, t_pile *pb, int j, int cost)
 
 	sortcost = sortoptions(pa, pb, j);
 	i = finalpos(*pa, pb->tab[j]);
-	printf("i = %d\n", i);
 	if (cost == sortcost.up)
-	{
-		printf("cost up\n");
 		goup(pa, pb, i, j);
-	}
 	else if (cost == sortcost.down)
-	{
-		printf("cost down \n");
 		godown(pa, pb, i, j);
-	}
 	else if (cost == sortcost.aupbdown)
-	{
-		printf("a up b down \n");
 		agoupbgodown(pa, pb, i, j);
-	}
 	else
-	{
-		printf("a down b up\n");
 		agodownbgoup(pa, pb, i, j);
-	}
 	push(pb, pa);
 	ft_printf("pa\n");
 }
