@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   medianvalue.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
+/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:11:36 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/13 15:06:25 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/16 18:05:16 by julieblaye       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	medianvalue(t_pile p)
 {
-	size_t	i;
+	int		i;
 	int		*cp;
 	int		tmp;
 
@@ -27,7 +27,7 @@ int	medianvalue(t_pile p)
 		cp[tmp] = p.tab[tmp];
 		tmp++;
 	}
-	while (cp != 0 && i < p.len)
+	while (cp != 0 && i < (int) p.len)
 	{
 		if (cp[i - 1] > cp[i])
 		{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mediansort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
+/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:07:21 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/13 16:37:57 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/16 17:50:30 by julieblaye       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	mediansort(t_pile *pa, t_pile *pb, int median)
 	size_t	totlen;
 
 	totlen = pa->len;
-	while (pa->len > totlen / 2 && pa->len > 3)
+	while (pa->len > totlen / 2 || pa->len > 3)
 	{
-		if (pa->tab[0] > median)
+		if (pa->tab[0] >= median)
 		{
 			push(pa, pb);
 			ft_printf("pb\n");

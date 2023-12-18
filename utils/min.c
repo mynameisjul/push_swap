@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   threesome.c                                        :+:      :+:    :+:   */
+/*   min.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/12 17:58:17 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/15 16:47:28 by julieblaye       ###   ########.fr       */
+/*   Created: 2023/12/15 11:48:44 by julieblaye        #+#    #+#             */
+/*   Updated: 2023/12/15 16:41:48 by julieblaye       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	threesome(t_pile *p, int rev)
+int	mintwo(int a, int b)
 {
-	int	imax;
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-	imax = imaxvalue(*p);
-	if (issorted(p, rev) == 0)
-	{
-		if (imax == 0)
-		{
-			rotate(p);
-			ft_printf("ra\n");
-		}
-		if (imax == 1)
-		{
-			rrotate(p);
-			ft_printf("rra\n");
-		}
-		if (p->tab[0] > p->tab[1])
-		{
-			swap(p);
-			ft_printf("sa\n");
-		}
-	}
+int minfour(int a, int b, int c, int d)
+{
+	if (b < a)
+		a = b;
+	if (c < a)
+		a = c;
+	if (d < a)
+		a = d;
+	return (a);
 }

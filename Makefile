@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+         #
+#    By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/08 15:37:29 by jblaye            #+#    #+#              #
-#    Updated: 2023/12/13 15:28:48 by jblaye           ###   ########.fr        #
+#    Updated: 2023/12/17 16:10:03 by julieblaye       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,10 @@ SRCS = ./operators/push.c ./operators/rotate.c \
 		./operators/swap.c ./operators/rrotate.c \
 		./parsing/parsing.c ./parsing/pilecheck.c \
 		./sorting/issorted.c ./sorting/threesome.c \
-		./sorting/mediansort.c \
+		./sorting/mediansort.c ./sorting/finalpos.c \
+		./sorting/sortingcost.c ./sorting/sorti.c ./sorting/push_swap \
 		./utils/multtab.c ./utils/imaxvalue.c \
-		./utils/medianvalue.c \
+		./utils/medianvalue.c ./utils/min.c ./utils/max.c\
 		main.c
 
 HEADERS = ./push_swap.h
