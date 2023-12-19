@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:18:47 by jblaye            #+#    #+#             */
-/*   Updated: 2023/12/18 10:27:26 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/19 09:46:54 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	mintotop(t_pile *pa)
 {
 	int	i;
 	int	inf;
-	
+
 	i = 0;
 	inf = minlist(pa);
 	if (inf < (int) pa->len / 2)

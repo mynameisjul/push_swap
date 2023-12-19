@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:11:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/18 10:38:42 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/19 10:24:17 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <stdio.h>
 # include "libft/libft.h"
 # include "printf/ft_printf.h"
+# include "gnl/get_next_line.h"
 
 // STRUCTURES
 
@@ -42,7 +42,7 @@ void		multtab(t_pile *p, int fac);
 int			imaxvalue(t_pile p);
 int			medianvalue(t_pile p);
 int			mintwo(int a, int b);
-int 		minfour(int a, int b, int c, int d);
+int			minfour(int a, int b, int c, int d);
 int			maxtwo(int n1, int n2);
 int			minlist(t_pile *pa);
 

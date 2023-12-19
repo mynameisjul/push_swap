@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:30:46 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/18 10:40:59 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/19 09:45:24 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	goup(t_pile *pa, t_pile *pb, int i, int j)
 {
 	while (i > 0 && j > 0)
-		{
-			rotate(pa);
-			rotate(pb);
-			ft_printf("rr\n");
-			i--;
-			j--;
-		}
+	{
+		rotate(pa);
+		rotate(pb);
+		ft_printf("rr\n");
+		i--;
+		j--;
+	}
 	while (i > 0)
 	{
 		rotate(pa);
@@ -39,13 +39,13 @@ void	goup(t_pile *pa, t_pile *pb, int i, int j)
 void	godown(t_pile *pa, t_pile *pb, int i, int j)
 {
 	while (i < (int) pa->len && j < (int) pb->len)
-		{
-			rrotate(pa);
-			rrotate(pb);
-			ft_printf("rrr\n");
-			i++;
-			j++;
-		}
+	{
+		rrotate(pa);
+		rrotate(pb);
+		ft_printf("rrr\n");
+		i++;
+		j++;
+	}
 	while (i < (int) pa->len)
 	{
 		rrotate(pa);
@@ -79,11 +79,11 @@ void	agoupbgodown(t_pile *pa, t_pile *pb, int i, int j)
 void	agodownbgoup(t_pile *pa, t_pile *pb, int i, int j)
 {
 	while (i < (int) pa->len)
-		{
-			rrotate(pa);
-			ft_printf("rra\n");
-			i++;
-		}
+	{
+		rrotate(pa);
+		ft_printf("rra\n");
+		i++;
+	}
 	while (j > 0)
 	{
 		rotate(pb);

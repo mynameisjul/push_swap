@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/02 11:16:54 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/18 19:50:27 by julieblaye       ###   ########.fr       */
+/*   Updated: 2023/12/19 09:28:27 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap(t_pile *p)
 {
 	int	tmp;
 
-	if (p->len > 2)
+	if (p->len >= 2)
 	{
 		tmp = p->tab[0];
 		p->tab[0] = p->tab[1];

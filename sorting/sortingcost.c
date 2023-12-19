@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sortingcost.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: julieblaye <julieblaye@student.42.fr>      +#+  +:+       +#+        */
+/*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 17:26:21 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/17 19:08:13 by julieblaye       ###   ########.fr       */
+/*   Updated: 2023/12/19 09:46:17 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_sortcost	sortoptions(t_pile *pa, t_pile *pb, int i)
 {
-	int 		j;
+	int			j;
 	t_sortcost	sortcost;
 
 	j = finalpos(*pa, pb->tab[i]);
@@ -28,15 +28,15 @@ t_sortcost	sortoptions(t_pile *pa, t_pile *pb, int i)
 int	*sortingcost(t_pile *pa, t_pile *pb)
 {
 	int			i;
-	t_sortcost	sortcost;
+	t_sortcost	sc;
 	int			*cost;
 
 	i = 0;
 	cost = (int *) ft_calloc(pb->len, sizeof(int));
 	while (i < (int) pb->len)
 	{
-		sortcost = sortoptions(pa, pb, i);
-		cost[i] = minfour(sortcost.up, sortcost.down, sortcost.adownbup, sortcost.aupbdown);
+		sc = sortoptions(pa, pb, i);
+		cost[i] = minfour(sc.up, sc.down, sc.adownbup, sc.aupbdown);
 		i++;
 	}
 	return (cost);

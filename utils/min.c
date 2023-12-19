@@ -6,7 +6,7 @@
 /*   By: jblaye <jblaye@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 11:48:44 by julieblaye        #+#    #+#             */
-/*   Updated: 2023/12/18 10:17:54 by jblaye           ###   ########.fr       */
+/*   Updated: 2023/12/19 09:47:45 by jblaye           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	mintwo(int a, int b)
 	return (b);
 }
 
-int minfour(int a, int b, int c, int d)
+int	minfour(int a, int b, int c, int d)
 {
 	if (b < a)
 		a = b;
